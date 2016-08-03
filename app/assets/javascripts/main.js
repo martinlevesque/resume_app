@@ -12,6 +12,7 @@ var callback = function(){
             height: 14,
         }, 2000);
     });
+
 };
 $(document).ready(callback);
 
@@ -22,3 +23,5 @@ window.onresize = function() {
         callback();
     }, 100);
 };
+
+

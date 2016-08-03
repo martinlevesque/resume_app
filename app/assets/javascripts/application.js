@@ -15,3 +15,6 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+//= require jquery.fittext
+//= require jquery.lettering
+//= require jquery.textillate
