@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  period_begin: 2016-08-03
+  period_end: 2016-08-03
+  company: MyString
+  title: MyString
+  description: MyText
+
+two:
+  period_begin: 2016-08-03
+  period_end: 2016-08-03
+  company: MyString
+  title: MyString
+  description: MyText

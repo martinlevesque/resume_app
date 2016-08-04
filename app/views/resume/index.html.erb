@@ -25,59 +25,36 @@
       <div class="box">
         <h2>Education</h2>
         <ul id="education" class="clearfix">
-          <li>
-            <div class="year pull-left">1990</div>
-            <div class="description pull-right">
-              <h3>I was born in Katowice</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, exercitationem, totam, dolores iste dolore est aut modi.</p>
-            </div>
-          </li>
-          <li>
-            <div class="year pull-left">2005</div>
-            <div class="description pull-right">
-              <h3>Secondary school specializing in artistic</h3>
-              <p>Eos, explicabo, nam, tenetur et ab eius deserunt aspernatur ipsum ducimus quibusdam quis voluptatibus.</p>
-            </div>
-          </li>
-          <li>
-            <div class="year pull-left">2009</div>
-            <div class="description pull-right">
-              <h3>First level graduation in Graphic Design</h3>
-              <p>Aspernatur, mollitia, quos maxime eius suscipit sed beatae ducimus quaerat quibusdam perferendis? Iusto, quibusdam asperiores unde repellat.</p>
-            </div>
-          </li>
-          <li>
-            <div class="year pull-left">2012</div>
-            <div class="description pull-right">
-              <h3>Second level graduation in Graphic Design</h3>
-              <p>Ducimus, aliquam tempore autem itaque et accusantium!</p>
-            </div>
-          </li>
+
+          <% @educations.each do |education| %>
+            <li>
+              <div class="year pull-left"><%= education.period_end.year %></div>
+              <div class="description pull-right">
+                <h3><%= education.title %></h3>
+                <p><%= education.description %></p>
+              </div>
+            </li>
+          <% end %>
+
         </ul>
       </div>
       <!-- EXPERIENCES -->
       <div class="box">
         <h2>Experiences</h2>
-        <div class="job clearfix">
-          <div class="col-xs-3">
-            <div class="where">Google</div>
-            <div class="year">2013 - 2014</div>
+
+        <% @experiences.each do |exp| %>
+          <div class="job clearfix">
+            <div class="col-xs-3">
+              <div class="where"><%= exp.company %></div>
+              <div class="year"><%= pretty_date(exp.period_begin) %> - <%= pretty_date(exp.period_end) %></div>
+            </div>
+            <div class="col-xs-9">
+              <div class="profession"><%= exp.title %></div>
+              <div class="description"><%= raw exp.description %></div>
+            </div>
           </div>
-          <div class="col-xs-9">
-            <div class="profession">Front-end developer / php programmer</div>
-            <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, et, illum perferendis veritatis velit sunt similique qui magni totam harum tempore eius laboriosam accusantium necessitatibus voluptatum? Enim, itaque dignissimos quia.</div>
-          </div>
-        </div>
-        <div class="job clearfix">
-          <div class="col-xs-3">
-            <div class="where">Twitter</div>
-            <div class="year">2012</div>
-          </div>
-          <div class="col-xs-9">
-            <div class="profession">Web Developer</div>
-            <div class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, nihil sit nemo voluptatem praesentium. Quia, qui facere consectetur libero asperiores fugiat consequuntur deserunt culpa repudiandae sed quidem voluptas explicabo soluta.</div>
-          </div>
-        </div>
+        <% end %>
+
       </div>
     </div>
     <div class="col-xs-12 col-sm-5">

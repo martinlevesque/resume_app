@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Period begin:</strong>
+  <%= @education.period_begin %>
+</p>
+
+<p>
+  <strong>Period end:</strong>
+  <%= @education.period_end %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @education.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @education.description %>
+</p>
+
+<%= link_to 'Edit', edit_education_path(@education) %> |
+<%= link_to 'Back', educations_path %>
