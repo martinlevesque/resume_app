@@ -228,6 +228,11 @@ CONTACT
 /*******************************************
 SKILLS
 *******************************************/
+
+.skills {
+    background-color: #E3E3E3;
+}
+
 .item-skills{
     height: 30px;
     background: #F0563D;

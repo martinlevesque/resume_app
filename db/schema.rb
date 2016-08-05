@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160804025536) do
+ActiveRecord::Schema.define(version: 20160805013950) do
 
   create_table "educations", force: :cascade do |t|
     t.date   "period_begin"
     t.date   "period_end"
     t.string "title"
     t.string "description"
+  end
+
+  create_table "experience_skills", force: :cascade do |t|
+    t.integer  "experience_id"
+    t.integer  "skill_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "nb_months",     default: 0
+    t.index ["experience_id"], name: "index_experience_skills_on_experience_id"
+    t.index ["skill_id"], name: "index_experience_skills_on_skill_id"
   end
 
   create_table "experiences", force: :cascade do |t|
@@ -27,6 +37,12 @@ ActiveRecord::Schema.define(version: 20160804025536) do
     t.text     "description"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

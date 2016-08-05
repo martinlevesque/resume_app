@@ -1,0 +1,1 @@
+json.array! @experience_skills, partial: 'experience_skills/experience_skill', as: :experience_skill

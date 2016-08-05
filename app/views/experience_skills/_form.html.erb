@@ -1,0 +1,32 @@
+<%= form_for(experience_skill) do |f| %>
+  <% if experience_skill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(experience_skill.errors.count, "error") %> prohibited this experience_skill from being saved:</h2>
+
+      <ul>
+      <% experience_skill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :experience_id %>
+    <%= f.collection_select :experience_id, Experience.all, :id, :company %>
+  </div>
+
+  <div class="field">
+    <%= f.label :skill_id %>
+    <%= f.collection_select :skill_id, Skill.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nb_months %>
+    <%= f.text_field :nb_months %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

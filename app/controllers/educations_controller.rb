@@ -1,4 +1,4 @@
-class EducationsController < ApplicationController
+class EducationsController < AdminController
   before_action :set_education, only: [:show, :edit, :update, :destroy]
 
   # GET /educations

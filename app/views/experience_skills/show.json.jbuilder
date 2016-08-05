@@ -1,0 +1,1 @@
+json.partial! "experience_skills/experience_skill", experience_skill: @experience_skill

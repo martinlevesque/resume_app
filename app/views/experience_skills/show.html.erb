@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Experience:</strong>
+  <%= @experience_skill.experience %>
+</p>
+
+<p>
+  <strong>Skill:</strong>
+  <%= @experience_skill.skill %>
+</p>
+
+<%= link_to 'Edit', edit_experience_skill_path(@experience_skill) %> |
+<%= link_to 'Back', experience_skills_path %>

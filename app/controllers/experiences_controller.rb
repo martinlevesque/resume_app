@@ -1,4 +1,4 @@
-class ExperiencesController < ApplicationController
+class ExperiencesController < AdminController
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
 
   # GET /experiences

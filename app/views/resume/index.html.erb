@@ -9,7 +9,7 @@
         </div>
         <div id="text-header">
           <h1>Martin Lévesque</h1>
-          <h2 id="header_title">Senior Software Developer</h2>
+          <h2 id="header_title">Software Developer</h2>
         </div>
       </div>
     </div>
@@ -50,7 +50,12 @@
             </div>
             <div class="col-xs-9">
               <div class="profession"><%= exp.title %></div>
-              <div class="description"><%= raw exp.description %></div>
+              <div class="description">
+                <%= raw exp.description %>
+                <p>
+                  <i>Skills: </i> <%= exp.experience_skills.map { |es| es.skill.name }.join(", ") %>.
+                </p>
+              </div>
             </div>
           </div>
         <% end %>
@@ -89,11 +94,10 @@
       <div class="box">
         <h2>Skills</h2>
         <div class="skills">
-          <div class="item-skills" data-percent="1.00">HTML</div>
-          <div class="item-skills" data-percent="0.90">CSS</div>
-          <div class="item-skills" data-percent="0.80">jQuery</div>
-          <div class="item-skills" data-percent="0.75">PHP</div>
-          <div class="item-skills" data-percent="0.25">Laravel 2 (framework)</div>
+          <% @skills_infos.each do |si| %>
+            <div class="item-skills" data-percent="<%= si[:percent_guru] %>"><%= si[:skill].name %> (<%= (si[:total_nb_months] / 12.0).round(2) %> years)</div>
+          <% end %>
+
           <div class="skills-legend clearfix">
             <div class="legend-left legend">Beginner</div>
             <div class="legend-left legend"><span>Proficient</span></div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :experience_skills
+  resources :skills
   resources :experiences
   resources :educations
   get 'resume/index'
