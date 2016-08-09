@@ -1,0 +1,4 @@
+$("#skills").html("<%= raw escape_javascript(render(:partial => 'skills',
+  :locals => {skills: @skills_infos, total_nb: @skills_infos.count, nb_skills_to_show: @skills_infos.count})) %>");
+
+refresh_skills();

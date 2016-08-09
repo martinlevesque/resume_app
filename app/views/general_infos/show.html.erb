@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @general_info.data %>
+</p>
+
+<p>
+  <strong>Linkedin:</strong>
+  <%= @general_info.linkedin %>
+</p>
+
+<%= link_to 'Edit', edit_general_info_path(@general_info) %> |
+<%= link_to 'Back', general_infos_path %>

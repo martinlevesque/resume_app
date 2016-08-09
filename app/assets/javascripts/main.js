@@ -1,4 +1,4 @@
-var callback = function(){
+var refresh_skills = function(){
     $('.item-skills').each(function(){
         newWidth = $(this).parent().width() * $(this).data('percent');
         $(this).width(0);
@@ -14,7 +14,7 @@ var callback = function(){
     });
 
 };
-$(document).ready(callback);
+$(document).ready(refresh_skills);
 
 var resize;
 window.onresize = function() {

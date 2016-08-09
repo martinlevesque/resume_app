@@ -1,0 +1,17 @@
+
+  <% skills.each do |si| %>
+      <div class="item-skills" data-percent="<%= si[:percent_guru] %>"><%= si[:skill].name %> (<%= (si[:total_nb_months] / 12.0).round(2) %> years)</div>
+  <% end %>
+
+  <div class="skills-legend clearfix">
+    <div class="legend-left legend">Beginner</div>
+    <div class="legend-left legend"><span>Proficient</span></div>
+    <div class="legend-right legend"><span>Expert</span></div>
+    <div class="legend-right legend">Master</div>
+  </div>
+
+  <% if total_nb > nb_skills_to_show %>
+      <div class="skills_link_more">
+        <%= link_to "#{total_nb - nb_skills_to_show} more skills if you click here...", {action: "more_skills"}, remote: true %>
+      </div>
+  <% end %>

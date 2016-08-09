@@ -25,6 +25,11 @@ body{
     color: #363636;
     background: #ededed;
 }
+
+.mainly_title {
+    font-size: small;
+}
+
 /*******************************************
 CONTAINER
 *******************************************/
@@ -233,15 +238,20 @@ SKILLS
     background-color: #E3E3E3;
 }
 
+.skills_link_more {
+    text-align: center;
+    font-size: small;
+}
+
 .item-skills{
     height: 30px;
     background: #F0563D;
-    color: #fff;
+    color: black;
     padding: 5px 10px;
     margin-bottom: 5px;
     white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
     font-size: 1.3em;
     font-weight: 600;
 }

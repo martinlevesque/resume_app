@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160805013950) do
+ActiveRecord::Schema.define(version: 20160809015421) do
 
   create_table "educations", force: :cascade do |t|
     t.date   "period_begin"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 20160805013950) do
     t.text     "description"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "general_infos", force: :cascade do |t|
+    t.text     "data",       limit: 100000
+    t.string   "linkedin"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "skills", force: :cascade do |t|

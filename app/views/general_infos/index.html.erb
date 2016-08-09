@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>General Infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Linkedin</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @general_infos.each do |general_info| %>
+      <tr>
+        <td><%= general_info.data %></td>
+        <td><%= general_info.linkedin %></td>
+        <td><%= link_to 'Show', general_info %></td>
+        <td><%= link_to 'Edit', edit_general_info_path(general_info) %></td>
+        <td><%= link_to 'Destroy', general_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New General Info', new_general_info_path %>
