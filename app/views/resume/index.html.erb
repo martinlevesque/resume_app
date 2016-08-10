@@ -53,7 +53,7 @@
               <div class="description">
                 <%= raw exp.description %>
                 <p>
-                  <i>Skills: </i> <%= exp.experience_skills.map { |es| es.skill.name }.join(", ") %>.
+                  <i>Skills: </i> <%= exp.experience_skills.map { |es| "#{es.skill.name} (#{pluralize(es.nb_months, "month")})" }.join(", ") %>.
                 </p>
               </div>
             </div>
@@ -66,11 +66,24 @@
       <!-- CONTACT -->
       <div class="box clearfix">
         <h2>Contact</h2>
-        <div class="contact-item">
-          <div class="icon pull-left text-center"><span class="fa fa-linkedin fa-fw"></span></div>
-          <div class="title pull-right">LinkedIn</div>
-          <div class="description pull-right"><%= link_to @general_infos.linkedin, @general_infos.linkedin %></div>
-        </div>
+        <% if @general_infos.linkedin.present? %>
+          <div class="contact-item">
+            <div class="icon pull-left text-center"><span class="fa fa-linkedin fa-fw"></span></div>
+            <div class="title pull-right">LinkedIn</div>
+            <div class="description pull-right"><%= link_to @general_infos.linkedin, @general_infos.linkedin %></div>
+          </div>
+        <% end %>
+
+        <% if @general_infos.github.present? %>
+          <div class="contact-item">
+            <div class="icon pull-left text-center"><span class="fa fa-github fa-fw"></span></div>
+            <div class="title pull-right">Github</div>
+            <div class="description pull-right">
+              <%= link_to @general_infos.github, @general_infos.github %><br />
+              Btw, the source code of this cv is available <%= link_to "here", "https://github.com/martinlevesque/resume_app" %> :-).
+            </div>
+          </div>
+        <% end %>
       </div>
       <!-- SKILLS -->
       <div class="box">

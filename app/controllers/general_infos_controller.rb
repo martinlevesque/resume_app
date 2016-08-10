@@ -69,6 +69,6 @@ class GeneralInfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def general_info_params
-      params.require(:general_info).permit(:about, :linkedin)
+      params.require(:general_info).permit!
     end
 end

@@ -87,7 +87,8 @@ DEFAULT BOX
     margin-bottom: 15px;
 }
 .box h2{
-    color: #EC7263;
+    /*color: #EC7263;*/
+    color: #464646;
     font-size: 1.8em;
     font-weight: 700;
     text-transform: uppercase;
@@ -117,13 +118,13 @@ EDUCATION
     top: 0;
     content: ' ';
     display: block;
-    background: #ec7263;
-    background: -moz-linear-gradient(top,  #ffffff 0%, #ec7263 7%, #ec7263 89%, #ffffff 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(7%,#ec7263), color-stop(89%,#ec7263), color-stop(100%,#ffffff));
-    background: -webkit-linear-gradient(top,  #ffffff 0%,#ec7263 7%,#ec7263 89%,#ffffff 100%);
-    background: -o-linear-gradient(top,  #ffffff 0%,#ec7263 7%,#ec7263 89%,#ffffff 100%);
-    background: -ms-linear-gradient(top,  #ffffff 0%,#ec7263 7%,#ec7263 89%,#ffffff 100%);
-    background: linear-gradient(to bottom,  #ffffff 0%,#ec7263 7%,#ec7263 89%,#ffffff 100%);
+    background: #acd8bc;
+    background: -moz-linear-gradient(top,  #ffffff 0%, #acd8bc 7%, #acd8bc 89%, #ffffff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(7%,#acd8bc), color-stop(89%,#acd8bc), color-stop(100%,#ffffff));
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#acd8bc 7%,#acd8bc 89%,#ffffff 100%);
+    background: -o-linear-gradient(top,  #ffffff 0%,#acd8bc 7%,#acd8bc 89%,#ffffff 100%);
+    background: -ms-linear-gradient(top,  #ffffff 0%,#acd8bc 7%,#acd8bc 89%,#ffffff 100%);
+    background: linear-gradient(to bottom,  #ffffff 0%,#acd8bc 7%,#acd8bc 89%,#ffffff 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
 }
 #education li{
@@ -245,7 +246,7 @@ SKILLS
 
 .item-skills{
     height: 30px;
-    background: #F0563D;
+    background: #acd8bc;
     color: black;
     padding: 5px 10px;
     margin-bottom: 5px;
@@ -272,7 +273,7 @@ SKILLS
     width: 25%;
     display: inline-block;
     font-size: 1.2em;
-    color: #a9a9a9;
+    color: #5a5a5a;
     float: left;
 }
 .legend:before{
