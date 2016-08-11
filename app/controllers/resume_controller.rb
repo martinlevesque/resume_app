@@ -9,6 +9,18 @@ class ResumeController < ApplicationController
 
     @general_infos = GeneralInfo.last
 
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => 'file_name',
+               :template => 'resume/index.pdf.erb',
+               encoding: 'utf8',
+               :margin => { :bottom => 20, :top => 20 },
+               header: { right: '[page] of [topage]' },
+               :layout => 'pdf.html.erb'
+      end
+    end
+
   end
 
   def more_skills

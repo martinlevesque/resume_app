@@ -1,0 +1,23 @@
+<!-- EXPERIENCES -->
+<div class="box">
+  <h2>Experiences</h2>
+
+  <% @experiences.each do |exp| %>
+      <div class="job clearfix">
+        <div class="col-xs-3">
+          <div class="where"><%= exp.company %></div>
+          <div class="year"><%= pretty_date(exp.period_begin) %> - <%= pretty_date(exp.period_end) %></div>
+        </div>
+        <div class="col-xs-9">
+          <div class="profession"><%= exp.title %></div>
+          <div class="description">
+            <%= raw exp.description %>
+            <p>
+              <i>Skills: </i> <%= exp.experience_skills.map { |es| "#{es.skill.name} (#{pluralize(es.nb_months, "month")})" }.join(", ") %>.
+            </p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+
+</div>

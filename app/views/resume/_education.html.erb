@@ -1,0 +1,17 @@
+<!-- EDUCATION -->
+<div class="box">
+  <h2>Education</h2>
+  <ul id="education" class="clearfix">
+
+    <% @educations.each do |education| %>
+        <li>
+          <div class="year pull-left"><%= education.period_end.year %></div>
+          <div class="description pull-right">
+            <h3><%= education.title %></h3>
+            <p><%= education.description %></p>
+          </div>
+        </li>
+    <% end %>
+
+  </ul>
+</div>

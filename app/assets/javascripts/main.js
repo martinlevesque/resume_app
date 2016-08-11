@@ -1,10 +1,13 @@
 var refresh_skills = function(){
     $('.item-skills').each(function(){
         newWidth = $(this).parent().width() * $(this).data('percent');
+        /*
         $(this).width(0);
+
         $(this).animate({
             width: newWidth,
         }, 1000);
+        */
     });
     $('.icons-red').each(function(){
         height = $(this).height();
@@ -15,6 +18,7 @@ var refresh_skills = function(){
 
 };
 $(document).ready(refresh_skills);
+refresh_skills();
 
 var resize;
 window.onresize = function() {

@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
@@ -14,6 +15,9 @@
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-7">
+
+      <%= render :partial => "contact", :formats => ["html"] %>
+
       <!-- ABOUT ME -->
       <div class="box">
         <h2>About Me</h2>
@@ -24,19 +28,17 @@
 
       <%= render :partial => "experiences", :formats => ["html"] %>
 
-
     </div>
     <div class="col-xs-12 col-sm-5">
-
-      <%= render :partial => "contact" %>
 
       <!-- SKILLS -->
       <div class="box">
         <h2>Skills</h2>
-        <div class="skills" id="skills">
-          <%= render :partial => "skills", :locals => {skills: @skills_infos.first(@nb_skills_to_show), total_nb: @skills_infos.count, nb_skills_to_show: @nb_skills_to_show} %>
+        <div class="skills" id="skills" >
+          <%= render :partial => "skills", :formats => [:html], :locals => {skills: @skills_infos.first(@nb_skills_to_show), total_nb: @skills_infos.count, nb_skills_to_show: @nb_skills_to_show} %>
         </div>
       </div>
+
     </div>
   </div>
 </div>

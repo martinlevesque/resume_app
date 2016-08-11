@@ -1,7 +1,14 @@
 
   <% skills.each do |si| %>
-      <div class="item-skills" data-percent="<%= si[:percent_guru] %>"><%= si[:skill].name %> (<%= (si[:total_nb_months] / 12.0).round(2) %> years)</div>
+      <div class="item-skills" style="" data-percent="<%= si[:percent_guru] %>"><%= si[:skill].name %> (<%= (si[:total_nb_months] / 12.0).round(2) %> years)
+      </div>
+      <p style="font-size: medium">
+        <%= "-" * (si[:percent_guru] * (155)).to_i %>
+      </p>
   <% end %>
+  <p style="font-size: medium">
+    <%= "-" * (1 * (155)).to_i %>
+  </p>
 
   <div class="skills-legend clearfix">
     <div class="legend-left legend">Beginner</div>
