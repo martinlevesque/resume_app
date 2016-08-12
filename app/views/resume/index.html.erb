@@ -6,8 +6,8 @@
 
         </div>
         <div id="text-header">
-          <h1>Martin Lévesque</h1>
-          <h2 id="header_title"><span class="mainly_title">Ruby (on Rails)</span> Software Developer</h2>
+          <h1><%= @general_infos.display_name %></h1>
+          <h2 id="header_title"><%= @general_infos.title %></h2>
         </div>
       </div>
     </div>
@@ -28,7 +28,7 @@
     </div>
     <div class="col-xs-12 col-sm-5">
 
-      <%= render :partial => "contact" %>
+      <%= render :partial => "contact", :formats => ["html"] %>
 
       <!-- SKILLS -->
       <div class="box">

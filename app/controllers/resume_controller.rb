@@ -9,12 +9,19 @@ class ResumeController < ApplicationController
 
     @general_infos = GeneralInfo.last
 
+
+    @base_url = request.base_url
+
     respond_to do |format|
       format.html
       format.pdf do
+
+
         render :pdf => 'file_name',
                :template => 'resume/index.pdf.erb',
                encoding: 'utf8',
+               default_header: false,
+               book: false,
                :margin => { :bottom => 20, :top => 20 },
                header: { right: '[page] of [topage]' },
                :layout => 'pdf.html.erb'

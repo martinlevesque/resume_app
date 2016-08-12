@@ -1,14 +1,11 @@
 
-<div class="container">
+<div class="container" >
   <div class="row">
     <div class="col-xs-12">
-      <div id="photo-header" class="text-center">
-        <div id="header_space">
-
-        </div>
+      <div class="text-center">
         <div id="text-header">
-          <h1>Martin Lévesque</h1>
-          <h2 id="header_title"><span class="mainly_title">Ruby (on Rails)</span> Software Developer</h2>
+          <h1><%= @general_infos.display_name %></h1>
+          <h2 id="header_title"><%= @general_infos.title %></h2>
         </div>
       </div>
     </div>
@@ -35,7 +32,7 @@
       <div class="box">
         <h2>Skills</h2>
         <div class="skills" id="skills" >
-          <%= render :partial => "skills", :formats => [:html], :locals => {skills: @skills_infos.first(@nb_skills_to_show), total_nb: @skills_infos.count, nb_skills_to_show: @nb_skills_to_show} %>
+          <%= render :partial => "skills", :formats => [:pdf], :locals => {skills: @skills_infos.first(@nb_skills_to_show), total_nb: @skills_infos.count, nb_skills_to_show: @nb_skills_to_show} %>
         </div>
       </div>
 

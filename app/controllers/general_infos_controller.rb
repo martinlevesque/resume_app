@@ -1,4 +1,4 @@
-class GeneralInfosController < ApplicationController
+class GeneralInfosController < AdminController
   before_action :set_general_info, only: [:show, :edit, :update, :destroy]
 
   # GET /general_infos

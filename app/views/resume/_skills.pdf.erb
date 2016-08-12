@@ -1,0 +1,8 @@
+
+<ul style="font-size: medium;">
+
+  <% skills.each do |si| %>
+      <li><%= si[:skill].name %> (<%= (si[:total_nb_months] / 12.0).round(2) %> years).</li>
+  <% end %>
+
+</ul>
