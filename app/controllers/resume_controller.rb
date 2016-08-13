@@ -1,21 +1,25 @@
 class ResumeController < ApplicationController
   def index
 
-    @educations = Education.all.order("period_end DESC")
+    @educations = Rails.cache.fetch "educations-index" do
+      Education.all.order("period_end DESC")
+    end
     load_experiences
 
     @nb_skills_to_show = 5
     load_skills
 
-    @general_infos = GeneralInfo.last
+    @general_infos = Rails.cache.fetch "general-infos-index" do
+      GeneralInfo.last
+    end
 
 
     @base_url = request.base_url
 
     respond_to do |format|
-      format.html
+      format.html do
+      end
       format.pdf do
-
 
         render :pdf => 'file_name',
                :template => 'resume/index.pdf.erb',
@@ -39,11 +43,15 @@ class ResumeController < ApplicationController
   private
 
   def load_experiences
-    @experiences = Experience.all.order("period_end DESC")
+    @experiences = Rails.cache.fetch "load-experiences" do
+      Experience.all.order("period_end DESC")
+    end
   end
 
   def load_skills
-    @skills_infos = calc_skills(@experiences, 100) # hopefully, we don't have 100 skills ;)
+    @skills_infos = Rails.cache.fetch "load-skills-infos" do
+      calc_skills(@experiences, 100) # hopefully, we don't have 100 skills ;)
+    end
   end
 
   def calc_skills(experiences, limit = 5)
