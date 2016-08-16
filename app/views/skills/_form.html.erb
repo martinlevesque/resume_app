@@ -16,6 +16,11 @@
     <%= f.text_field :name %>
   </div>
 
+  <div class="field">
+    <%= f.label :skill_category_id %>
+    <%= f.collection_select :skill_category_id, SkillCategory.all, :id, :name %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

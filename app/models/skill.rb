@@ -1,5 +1,7 @@
 class Skill < ApplicationRecord
 
+  belongs_to :skill_category
+
   def self.years_experience_in(skill_name)
 
     skill = Skill.find_by_name(skill_name) rescue nil

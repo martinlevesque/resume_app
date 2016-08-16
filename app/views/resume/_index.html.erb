@@ -31,12 +31,18 @@
       <%= render :partial => "contact", :formats => ["html"] %>
 
       <!-- SKILLS -->
-      <div class="box">
-        <h2>Skills</h2>
-        <div class="skills" id="skills">
-          <%= render :partial => "skills", :locals => {skills: @skills_infos.first(@nb_skills_to_show), total_nb: @skills_infos.count, nb_skills_to_show: @nb_skills_to_show} %>
+      <% @skills_infos.each do |skills_infos| %>
+        <div class="box">
+          <h2><%= skills_infos[:category].name %></h2>
+          <div class="skills" id="skills_<%= skills_infos[:category].id %>">
+            <%= render :partial => "skills",
+                       :locals => {skills: skills_infos[:skills_infos].first(@nb_skills_to_show),
+                                   total_nb: skills_infos[:skills_infos].count,
+                                   nb_skills_to_show: @nb_skills_to_show,
+                                    skill_category: skills_infos[:category]} %>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

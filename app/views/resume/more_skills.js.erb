@@ -1,4 +1,8 @@
-$("#skills").html("<%= raw escape_javascript(render(:partial => 'skills',
-  :locals => {skills: @skills_infos, total_nb: @skills_infos.count, nb_skills_to_show: @skills_infos.count})) %>");
+<% @skills_infos.each do |si| %>
+  <% if si[:category] == @skill_category %>
+    $("#skills_<%= @skill_category.id %>").html("<%= raw escape_javascript(render(:partial => 'skills',
+      :locals => {skills: si[:skills_infos], total_nb: si[:skills_infos].count, nb_skills_to_show: si[:skills_infos].count})) %>");
+  <% end %>
+<% end %>
 
 refresh_skills();

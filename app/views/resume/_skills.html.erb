@@ -13,6 +13,6 @@
 
   <% if total_nb > nb_skills_to_show %>
       <div class="skills_link_more">
-        <%= link_to "#{total_nb - nb_skills_to_show} more skills if you click here...", {action: "more_skills"}, remote: true %>
+        <%= link_to "#{total_nb - nb_skills_to_show} more skills if you click here...", {action: "more_skills", skill_category_id: skill_category.id}, remote: true %>
       </div>
   <% end %>

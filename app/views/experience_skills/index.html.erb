@@ -14,8 +14,8 @@
   <tbody>
     <% @experience_skills.each do |experience_skill| %>
       <tr>
-        <td><%= experience_skill.experience %></td>
-        <td><%= experience_skill.skill %></td>
+        <td><%= experience_skill.experience.company if experience_skill.experience.present? %></td>
+        <td><%= experience_skill.skill.name if experience_skill.skill.present? %></td>
         <td><%= link_to 'Show', experience_skill %></td>
         <td><%= link_to 'Edit', edit_experience_skill_path(experience_skill) %></td>
         <td><%= link_to 'Destroy', experience_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>

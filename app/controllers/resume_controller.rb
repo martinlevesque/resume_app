@@ -35,9 +35,10 @@ class ResumeController < ApplicationController
   end
 
   def more_skills
+    @skill_category = SkillCategory.find(params[:skill_category_id])
     load_experiences
     load_skills
-    @nb_skills_to_show = @skills_infos.count
+    @nb_skills_to_show = 1000
   end
 
   private
@@ -50,12 +51,22 @@ class ResumeController < ApplicationController
 
   def load_skills
     @skills_infos = Rails.cache.fetch "load-skills-infos" do
-      calc_skills(@experiences, 100) # hopefully, we don't have 100 skills ;)
+      calc_skills(@experiences) # hopefully, we don't have 100 skills ;)
     end
+    puts "skills infos = #{@skills_infos}"
   end
 
-  def calc_skills(experiences, limit = 5)
+  def calc_skills(experiences)
+    skill_cats = SkillCategory.all
+
+    return skill_cats.map { |sc| {category: sc, skills_infos: calc_skills_for_category(sc, experiences)} }
+      .sort_by { |s| s[:skills_infos].sum { |element| element[:total_nb_months] } }.reverse
+  end
+
+  def calc_skills_for_category(skill_cat, experiences, limit = 100)
+
     skills = experiences.map { |e| e.experience_skills.map { |es| es.skill } }.flatten(1).uniq
+    skills = skills.select { |s| s.in?(skill_cat.skills) }
 
     skills_infos = []
 
