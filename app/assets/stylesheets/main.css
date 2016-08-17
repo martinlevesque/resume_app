@@ -1,11 +1,5 @@
-/*******************************************
-3ColorResume
-Author: office@kamsolutions.pl
-*******************************************/
-/*******************************************
-FONTS
-*******************************************/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+
 /*******************************************
 SETTINGS
 *******************************************/
@@ -21,7 +15,7 @@ BODY
 body{
     font-family: 'Open Sans', Arial, Tahoma;
     font-weight: 400;
-    font-size: 1em;
+    font-size: 1.2em;
     color: #363636;
     background: #ededed;
 }
