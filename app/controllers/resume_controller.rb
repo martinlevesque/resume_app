@@ -1,4 +1,7 @@
 class ResumeController < ApplicationController
+
+  http_basic_authenticate_with :name => ADMIN_USER, :password => ADMIN_PASSWORD
+
   def index
 
     @educations = Rails.cache.fetch "educations-index" do
