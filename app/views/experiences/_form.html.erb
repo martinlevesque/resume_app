@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= f.label :period_begin %>
-    <%= f.date_select :period_begin %>
+    <%= f.date_select :period_begin, start_year: 1950 %>
   </div>
 
   <div class="field">
     <%= f.label :period_end %>
-    <%= f.date_select :period_end %>
+    <%= f.date_select :period_end, start_year: 1950 %>
   </div>
 
   <div class="field">
