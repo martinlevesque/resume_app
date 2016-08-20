@@ -6,7 +6,7 @@
       <div class="job clearfix">
         <div class="col-xs-3">
           <div class="where"><%= link_to exp.company, exp.url %></div>
-          <div class="year"><%= pretty_date(exp.period_begin) %> - <%= pretty_date(exp.period_end) %></div>
+          <div class="year"><%= pretty_date(exp.period_begin) %> - <%= (exp.is_current? ? "..." : pretty_date(exp.period_end)) %></div>
         </div>
         <div class="col-xs-9">
           <div class="profession"><%= exp.title %></div>
