@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160813135805) do
+ActiveRecord::Schema.define(version: 20160820023628) do
 
   create_table "educations", force: :cascade do |t|
     t.date   "period_begin"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20160813135805) do
     t.text     "description"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "url"
   end
 
   create_table "general_infos", force: :cascade do |t|

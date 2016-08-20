@@ -69,6 +69,6 @@ class ExperiencesController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def experience_params
-      params.require(:experience).permit(:period_begin, :period_end, :company, :title, :description)
+      params.require(:experience).permit(:period_begin, :period_end, :company, :title, :description, :url)
     end
 end
